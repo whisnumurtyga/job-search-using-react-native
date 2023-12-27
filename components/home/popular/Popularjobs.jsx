@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import {
     View,
     Text,
@@ -14,22 +14,22 @@ import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 
 import useFetch from "../../../hook/useFetch";
 
-const Popularjobs = () => {
+const Popularjobs = ({ searchTerm, setSearchTerm }) => {
     const router = useRouter();
     // const isLoading = false;
     // const error = false;
 
     const { data, isLoading, error } = useFetch("search", {
-        query: "React Developer",
+        query: searchTerm ?? "React Developer",
         num_pages: 1,
-    });
+    });    
 
-    const [ selectedJob, setSelectedJob ] = useState()
+    const [selectedJob, setSelectedJob] = useState();
 
     const handleCardPress = (item) => {
-        router.push(`/job-details/${item.job_id}`)
-        setSelectedJob(item.job_id)
-    }
+        router.push(`/job-details/${item.job_id}`);
+        setSelectedJob(item.job_id);
+    };
 
     // console.log(data);
     // console.log(isLoading);
