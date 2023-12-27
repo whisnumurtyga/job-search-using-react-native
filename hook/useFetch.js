@@ -12,11 +12,11 @@ const useFetch = (endpoint, query) => {
     // const axios = require('axios');
 
     const options = {
-        method: 'GET',
+        method: "GET",
         url: `https://jsearch.p.rapidapi.com/${endpoint}`,
         headers: {
-            'X-RapidAPI-Key': '25a149d325msh7bb0d0ba1190a70p1bb95djsn440a96da408d',
-            'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
+            "X-RapidAPI-Key":"ff89817ad4msh03d492041e121fcp1d2c50jsn6811df276fff",
+            "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
         },
         params: { ...query },
     };
